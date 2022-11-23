@@ -2,10 +2,11 @@ import os
 import psycopg2
 import sqlite3 as lite
 from Message import send_message
-from Scheduler import *
-from Crawler import *
+from Crawler import crawling
 
 def check_result_send_mess():
+    chat_id = '5748584641'
+
     # try to create SQL database and table to store jobs in, else send error message to bot
     try:
        DATABASE_URL = os.environ['DATABASE_URL']
