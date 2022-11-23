@@ -1,5 +1,5 @@
 import schedule
-from Database import *
+from Database import check_result_send_mess
 
 # bot and chat ids
 bot = 'https://api.telegram.org/bot5980362577:AAGMqqy4nSZPrxdL6KLboDalAE6DQRJ3z2o'

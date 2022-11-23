@@ -1,7 +1,7 @@
 import os
 import psycopg2
 import sqlite3 as lite
-from Message import *
+from Message import send_message
 from Scheduler import *
 from Crawler import *
 
