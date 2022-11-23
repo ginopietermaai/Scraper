@@ -1,3 +1,6 @@
+import requests
+from Scheduler import *
+
 def send_message(chat_id, text):
     # send message to telegram  
     parameters = {'chat_id': chat_id, 'text': text}

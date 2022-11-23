@@ -1,6 +1,9 @@
 import os
 import psycopg2
 import sqlite3 as lite
+from Message import *
+from Scheduler import *
+from Crawler import *
 
 def check_result_send_mess():
     # try to create SQL database and table to store jobs in, else send error message to bot
