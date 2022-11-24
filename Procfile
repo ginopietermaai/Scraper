@@ -1,1 +1,1 @@
-web: python Scheduler.py -p :$PORT
+app: python Scheduler.py
