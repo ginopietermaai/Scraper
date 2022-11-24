@@ -31,6 +31,10 @@ def check_result_send_mess():
         arval_db.execute('INSERT INTO arval (data) VALUES (%s);', [data])
         conn.commit()
         print('Database updated..')
+    else:
+      print('Nothing new..')
+      send_message(chat_id, data)
+      print('Message sent..')
             
     # end SQL connection
     arval_db.close()
