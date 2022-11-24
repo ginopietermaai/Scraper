@@ -22,9 +22,9 @@ def check_result_send_mess():
     print('Crawled..')
 
     # check if there is new data added
-    new_data = arval_db.execute('SELECT data FROM arval WHERE data = %s', [data])
+    arval_db.execute('SELECT data FROM arval WHERE data = %s', [data])
         
-    if new_data.fetchone() == None:
+    if arval_db.fetchone() == None:
         print('Sending message..')
         send_message(chat_id, data)
         print('Message sent..')
