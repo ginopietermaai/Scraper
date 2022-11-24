@@ -11,7 +11,7 @@ else:
     port = 3000
 
 # schedule crawler
-schedule.every().day.at("19:00").do(check_result_send_mess)
+schedule.every().day.at("16:00").do(check_result_send_mess)
 
 # run script infinitely
 while True:

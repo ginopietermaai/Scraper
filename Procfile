@@ -1,1 +1,1 @@
-web: python Scheduler.py
+web: python Scheduler.py --bind :$PORT
