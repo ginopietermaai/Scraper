@@ -13,7 +13,7 @@ else:
     port = 3000
 
 # schedule crawler
-schedule.every(int(minutes)).minutes.do(check_result_send_mess)
+schedule.every(5).minutes.do(check_result_send_mess)
 
 # run script infinitely
 while True:
