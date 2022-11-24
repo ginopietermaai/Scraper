@@ -1,16 +1,14 @@
-import schedule
 import os
-from flask import Flask
+import schedule
 from Database import check_result_send_mess
-app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    return "Hello from Python!"
+ON_HEROKU = os.environ.get('ON_HEROKU')
 
-if __name__ == "__main__":
- port = int(os.environ.get("PORT", 5000))
- app.run(host='0.0.0.0', port=port)
+if ON_HEROKU:
+    # get the heroku port
+    port = int(os.environ.get('PORT', 17995))  # as per OP comments default is 17995
+else:
+    port = 3000
 
 # schedule crawler
 schedule.every().day.at("19:00").do(check_result_send_mess)
