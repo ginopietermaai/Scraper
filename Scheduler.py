@@ -13,4 +13,5 @@ print('Scheduled..')
 # run script infinitely
 while True:
     schedule.run_pending()
+    print('Pending..')
     time.sleep(1)

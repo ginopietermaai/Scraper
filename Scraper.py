@@ -1,17 +1,26 @@
-from bs4 import BeautifulSoup
 import requests
+
+bot = 'https://api.telegram.org/bot5980362577:AAGMqqy4nSZPrxdL6KLboDalAE6DQRJ3z2o/'
+    
+# send message to telegram  
+parameters = {'chat_id': '5748584641', 'text': 'tester de test'}
+requests.post(bot + 'sendMessage', data=parameters)
+
+
+#from bs4 import BeautifulSoup
+#import requests
  
 
 # get content of website and parse it
-website_request = requests.get('https://arval.nl/public/herinzetlijst/', timeout=5)
-website_content = BeautifulSoup(website_request.content, "html.parser")
+#website_request = requests.get('https://arval.nl/public/herinzetlijst/', timeout=5)
+#website_content = BeautifulSoup(website_request.content, "html.parser")
     
 # extract job description
-container = website_content.find_all(class_ = 'grid-container')[-1]
-table = container.find_all('table')
-f = open('output.txt', 'w')
-f.write(str(table).strip("[']"))
-f.close()
+#container = website_content.find_all(class_ = 'grid-container')[-1]
+#table = container.find_all('table')
+#f = open('output.txt', 'w')
+#f.write(str(table).strip("[']"))
+#f.close()
 
 # instantiate options 
 #options = webdriver.ChromeOptions() 
