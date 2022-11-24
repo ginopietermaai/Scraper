@@ -13,7 +13,7 @@ def check_result_send_mess():
        conn = psycopg2.connect(DATABASE_URL, sslmode='require')
        arval_db = conn.cursor()
        arval_db.execute('CREATE TABLE IF NOT EXISTS arval (id SERIAL, data TEXT NOT NULL)')
-       print('Database created..')
+       print('Create or assure database..')
     except:
        send_message(chat_id, 'The database could not be accessed.')
         
@@ -24,7 +24,7 @@ def check_result_send_mess():
     # check if there is new data added
     new_data = arval_db.execute('SELECT data FROM arval WHERE data = %s', [data])
         
-    if len(arval_db.fetchall()) != 1:
+    if new_data.fetchone() == None:
         print('Sending message..')
         send_message(chat_id, data)
         print('Message sent..')
