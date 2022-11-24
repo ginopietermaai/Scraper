@@ -22,7 +22,7 @@ def check_result_send_mess():
     # check if there is new data added
     new_data = arval_db.execute('SELECT data FROM arval WHERE data = %s', [data])
         
-    if len(new_data) != 1:
+    if len(arval_db.fetchall()) != 1:
         send_message(chat_id, data)
         arval_db.execute('INSERT INTO arval (data) VALUES (%s);', [data])
         conn.commit()
