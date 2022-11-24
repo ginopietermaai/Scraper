@@ -14,4 +14,3 @@ print('Scheduled..')
 while True:
     schedule.run_pending()
     print('Pending..')
-    time.sleep(1)
