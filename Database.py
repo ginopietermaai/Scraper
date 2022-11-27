@@ -3,6 +3,7 @@ import psycopg2
 import sqlite3 as lite
 from Message import send_message
 from Crawler import crawling
+from bs4 import BeautifulSoup
 
 def check_result_send_mess():
     chat_id = '5748584641'
@@ -33,8 +34,6 @@ def check_result_send_mess():
         print('Database updated..')
     else:
       print('Nothing new..')
-      send_message(chat_id, data)
-      print('Message sent..')
             
     # end SQL connection
     arval_db.close()

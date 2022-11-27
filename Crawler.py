@@ -9,4 +9,4 @@ def crawling(website_link, link_class):
     # extract data
     container = website_content.find_all(class_ = link_class)[-1]
     table = container.find_all('table')
-    return str(table).strip("[']")
+    return BeautifulSoup(table, 'html.parser').get_text().replace('\xa0', '').replace('\n\n', '').replace('\n ', '\n')
