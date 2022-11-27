@@ -7,7 +7,7 @@ minutes = os.environ.get('minutes')
 print('Minutes variable set to: ' + minutes)
 
 # schedule crawler
-schedule.every(1).minutes.do(check_result_send_mess)
+schedule.every(minutes).minutes.do(check_result_send_mess)
 print('Scheduled..')
 
 # run script infinitely
