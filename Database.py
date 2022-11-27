@@ -33,8 +33,6 @@ def check_result_send_mess():
         print('Database updated..')
     else:
       print('Nothing new..')
-      print(chat_id)
-      print(data)
       send_message(chat_id, data)
       print('Message sent..')
             
