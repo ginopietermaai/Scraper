@@ -6,7 +6,7 @@ def send_message(chat_id, text):
     
     # parse message 
     json = html_to_json.convert_tables(text)
-    print(len(json))
+    print(json)
 
     # split and send message to telegram
     for i in range(0, len(json), 4000):
